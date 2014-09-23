@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;Income.main().console&apos; in &apos;Income.main()&apos; to field&#x0D;&#x0A;- Original project: &apos;Lab2&apos;&#x0D;&#x0A;- Original element: &apos;Income.main().console&apos;&#x0D;&#x0A;- Field name: &apos;console&apos;&#x0D;&#x0A;- Initialize field in method&#x0D;&#x0A;- Declared visibility: &apos;private&apos;&#x0D;&#x0A;- Declare field &apos;static&apos;" description="Convert local variable &apos;console&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src&lt;{Income.java" name="console" selection="515 32" stamp="1411492216996" static="true" version="1.0" visibility="2"/>
+</session>

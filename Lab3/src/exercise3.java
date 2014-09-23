@@ -14,7 +14,8 @@ public class exercise3 {
 		//Declare variables
 		String dollar = "$", increase = "Increase", year = "Year ", lastName = "Last Name", firstName = "First Name";
 		double salary, pctRaise, salaryNew, salaryOld;
-
+		
+		//print and format header
 		outFile.printf("%-12s%-15s", firstName, lastName);
 		for(int t=1; t<=10; t++)
 		{
@@ -33,7 +34,7 @@ public class exercise3 {
 			pctRaise = inFile.nextDouble();
 			salaryNew = salary;
 			outFile.printf("%-12s%-15s", firstName, lastName);
-			//set up nested while loop to recur the annual increase and store it back into the salary variable
+
 			int i=0;
 			while(i<=9)
 			{

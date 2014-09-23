@@ -4,13 +4,15 @@
 import java.util.Scanner;
 public class Income {
 
+	private static Scanner console;
+
 	public static void main(String[] args) 
 	{
 		//This program calculates how much money will be placed on a savings bond based on monthly spendings
 		//Declare and initialize variables
 		double weeks, hours, payRate, taxRate, pctAccessories, pctSupplies, pctInvested, parentContrib, totalParentContrib, leftoverMoney, totalInvest;
 		double preTax, postTax, tax, accessories, supplies, invested, total;
-		Scanner console = new Scanner(System.in);
+		console = new Scanner(System.in);
 		
 		//Prompt user for values and store them in memory
 		System.out.println("How many weeks are you working? ");
