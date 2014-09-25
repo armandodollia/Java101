@@ -59,31 +59,15 @@ public class exercise4 {
 				
 				fat = ((weight-(((weight*.732)+8.987)+(wrist/3.14)-(waist*.157)-(hip*.249)+(forearm*.434)))*100)/weight;
 				output = String.format("Your body fat percentage is: %.2f%%", fat);
-				JOptionPane.showMessageDialog(null, output, "Body Fat", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, output, "String Permutations", JOptionPane.INFORMATION_MESSAGE);
 			}
 			else
 			{
-				JTextField weightField = new JTextField(5);
-				JTextField waistField = new JTextField(5);
-				JPanel measurePanel = new JPanel();
-				measurePanel.add(new JLabel("Weight in lbs"));
-				measurePanel.add(weightField);
-				measurePanel.add(Box.createHorizontalStrut(5));
-				measurePanel.add(new JLabel("Waist"));
-				measurePanel.add(waistField);
-				measurePanel.add(Box.createHorizontalStrut(5));
-				
-				int result = JOptionPane.showConfirmDialog(null, measurePanel, 
-			               "Please Enter Measurements", JOptionPane.OK_CANCEL_OPTION);
-				
-				weight = Double.parseDouble(weightField.getText());
-				waist = Double.parseDouble(waistField.getText());
-				
-				//weight = Double.parseDouble(JOptionPane.showInputDialog("Enter your weight"));
-				//waist = Double.parseDouble(JOptionPane.showInputDialog("Enter your waist measurement at the navel"));
+				weight = Double.parseDouble(JOptionPane.showInputDialog("Enter your weight"));
+				waist = Double.parseDouble(JOptionPane.showInputDialog("Enter your waist measurement at the navel"));
 				fat = ((weight-(((weight*1.082)+94.42)-(waist*4.15)))*100)/weight;
 				output = String.format("Your body fat percentage is: %.2f%%", fat);
-				JOptionPane.showMessageDialog(null, output, "Body Fat", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, output, "String Permutations", JOptionPane.INFORMATION_MESSAGE);
 			}
 			repeat = JOptionPane.showInputDialog("Do you want to try again?");
 			repeat = repeat.toUpperCase();
