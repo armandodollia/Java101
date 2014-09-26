@@ -20,13 +20,14 @@ public class exercise4 {
 
 			if(sex.equals("F"))
 			{
+				//Create text fields and set width
 				JTextField weightField = new JTextField(5);
 				JTextField wristField = new JTextField(5);
 				JTextField waistField = new JTextField(5);
-				JTextField hipField = new JTextField(5);
+				JTextField  hipField = new JTextField(5);
 				JTextField forearmField = new JTextField(5);
-
-				JPanel measurePanel = new JPanel();
+				JPanel measurePanel = new JPanel(); //Create window and store it into an object
+				
 				measurePanel.add(new JLabel("Weight in lbs"));
 				measurePanel.add(weightField);
 				measurePanel.add(Box.createHorizontalStrut(5));
