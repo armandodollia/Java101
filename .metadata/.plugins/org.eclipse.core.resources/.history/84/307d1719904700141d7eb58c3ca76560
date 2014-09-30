@@ -1,0 +1,22 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+public class sorting {
+
+	public static void main(String[] args) throws FileNotFoundException
+	{
+		Scanner inFile = new Scanner(new FileReader("People.txt"));
+		PrintWriter outFile = new PrintWriter("People_Sorted.txt");
+		
+		luckyNumber one = new luckyNumber("john", 23);
+		System.out.println(one.getNumber());
+		
+		
+		outFile.close();
+		inFile.close();
+	}
+
+}
