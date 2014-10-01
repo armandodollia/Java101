@@ -23,7 +23,7 @@ public class sorting {
 			list.add(favorite);
 		}
 		
-		sort(list);//calls the method sort
+		sort(list);
 		for(int i = 0; i<list.size(); i++){
 			outFile.println(list.get(i).getName() + " " + list.get(i).getNumber());
 		}

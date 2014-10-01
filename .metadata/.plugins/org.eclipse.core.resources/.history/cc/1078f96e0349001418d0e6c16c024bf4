@@ -86,8 +86,9 @@ public class exercise4 {
 				output = String.format("Your body fat percentage is: %.2f%%", fat);
 				JOptionPane.showMessageDialog(null, output, "Body Fat", JOptionPane.INFORMATION_MESSAGE);
 			}
-			repeat = JOptionPane.showInputDialog("Do you want to try again?").toUpperCase().substring(0,1);
-
+			repeat = JOptionPane.showInputDialog("Do you want to try again?");
+			repeat = repeat.toUpperCase();
+			repeat = repeat.substring(0,1);
 		}
 	}
 
