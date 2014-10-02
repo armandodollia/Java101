@@ -88,7 +88,7 @@ public class isVowel extends JFrame{
 	
 	public static void main(String[] args) {
 		
-		isVowel window = new isVowel();
+		new isVowel();
 		
 
 	}
