@@ -1,7 +1,3 @@
-/***********************
- * Name: Armando Dollia*
- * Date: 09/28/2014	   *
- ***********************/
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -39,11 +35,11 @@ public class isVowel extends JFrame{
 		charInput = new JTextField(10);
 		vowelOutput = new JTextField(10);
 		
-		//create finder button
+		//create calculate button
 		finder = new JButton("Give me the Vowels!");
 		FinderButtonHandler finderHandler = new FinderButtonHandler();
 		finder.addActionListener(finderHandler);
-
+		
 		//create exit button
 		exit = new JButton("Exit");
 		ExitButtonHandler exitHandler = new ExitButtonHandler();

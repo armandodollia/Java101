@@ -81,15 +81,15 @@ public class lab5EC extends JFrame{
 			//print to the output window
 			maxOutput.setText("" + max);
 		}
-	}
+		
 		//begin exit button class
 		public class exitButtonHandler implements ActionListener{
-			
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
+			
 		}
-
+	}
 	public static void main(String[] args) {
 		new lab5EC();
 
