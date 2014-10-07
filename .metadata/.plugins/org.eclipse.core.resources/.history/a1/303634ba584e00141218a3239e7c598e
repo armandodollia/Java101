@@ -1,0 +1,26 @@
+
+public class palindromeHelper {
+
+		String word;
+		Integer number;
+		Boolean palindromeTest = true;
+
+		
+		public palindromeHelper(String word) {
+			this.word = word;
+			while(palindromeTest){
+				for(int i = 0; i <= (word.length()-i-1)/2; i++){
+						if(word.charAt(i) == word.charAt(word.length()-1-i)){
+							palindromeTest = true;
+						}
+						else{
+							palindromeTest = false;
+						}
+				}
+			}
+		}
+		
+		public Boolean getTest(){
+			return palindromeTest;
+		}
+}

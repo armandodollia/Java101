@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;test&apos; from expression &apos;palindromeHelper.getTest()&apos;&#x0D;&#x0A;- Original project: &apos;Lab6&apos;&#x0D;&#x0A;- Variable name: &apos;test&apos;&#x0D;&#x0A;- Destination method: &apos;lab6.CheckButtonHandler.actionPerformed()&apos;&#x0D;&#x0A;- Variable expression: &apos;palindromeHelper.getTest()&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;test&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;{lab6.java" name="test" replace="true" selection="1889 26" stamp="1412710348699" version="1.0"/>
+</session>
