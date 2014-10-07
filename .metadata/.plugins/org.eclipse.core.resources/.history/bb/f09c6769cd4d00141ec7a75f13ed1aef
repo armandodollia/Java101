@@ -77,7 +77,7 @@ public class lab5EC extends JFrame{
 			//calculate
 			//theta = Math.atan(narrow / wide);
 			//max = ((wide / Math.sin(theta)) + (narrow / Math.cos(theta)));
-			max = Math.pow((Math.pow(narrow, (2.0/3.0)) + Math.pow(wide, (2.0/3.0))), (3.0/2.0));
+			max = Math.pow((Math.pow(narrow, 2/3) + Math.pow(wide, 2/3)), 3/2);
 			
 			//print to the output window
 			maxOutput.setText("" + max);

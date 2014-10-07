@@ -69,15 +69,14 @@ public class lab5EC extends JFrame{
 	public class CalculateButtonHandler implements ActionListener{
 
 		public void actionPerformed(ActionEvent e) {
-			double narrow, wide, max;
+			double narrow, wide, max, theta;
 			//store the input
 			narrow = Double.parseDouble(narrowInput.getText());
 			wide = Double.parseDouble(wideInput.getText());
 			
 			//calculate
-			//theta = Math.atan(narrow / wide);
-			//max = ((wide / Math.sin(theta)) + (narrow / Math.cos(theta)));
-			max = Math.pow((Math.pow(narrow, (2.0/3.0)) + Math.pow(wide, (2.0/3.0))), (3.0/2.0));
+			theta = Math.atan(narrow / wide);
+			max = ((wide / Math.sin(theta)) + (narrow / Math.cos(theta)));
 			
 			//print to the output window
 			maxOutput.setText("" + max);
