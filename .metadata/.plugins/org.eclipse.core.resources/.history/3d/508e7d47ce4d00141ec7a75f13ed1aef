@@ -75,6 +75,8 @@ public class lab5EC extends JFrame{
 			wide = Double.parseDouble(wideInput.getText());
 			
 			//calculate
+			//theta = Math.atan(narrow / wide);
+			//max = ((wide / Math.sin(theta)) + (narrow / Math.cos(theta)));
 			max = Math.pow((Math.pow(narrow, (2.0/3.0)) + Math.pow(wide, (2.0/3.0))), (3.0/2.0));
 			
 			//print to the output window
