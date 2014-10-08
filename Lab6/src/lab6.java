@@ -1,3 +1,7 @@
+/***********************
+ * Name: Armando Dollia*
+ * Date: 10/07/2014	   *
+ ***********************/
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -61,9 +65,11 @@ public class lab6 extends JFrame {
 		
 		public void actionPerformed(ActionEvent e){
 			String word = inputBox.getText();
-			palindromeHelper test = new palindromeHelper(word);
+			Integer number = Integer.parseInt(inputBox.getText());
+			palindromeHelper test = new palindromeHelper();
 			
-			if(test.getTest()){
+			
+			if(test.palindrome(word) || test.palindrome(number)){
 				outputBox.setText("Yes");
 			}
 			else{
@@ -79,7 +85,6 @@ public class lab6 extends JFrame {
 		}
 	}
 	public static void main(String[] args) {
-		
 		new lab6();
 
 	}
