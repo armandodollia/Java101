@@ -6,9 +6,6 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -44,10 +41,6 @@ public class lab6 extends JFrame {
 		CheckButtonHandler checkHandler = new CheckButtonHandler();
 		check.addActionListener(checkHandler);
 		
-		//set enter key to check
-		EnterButtonHandler enterHandler = new EnterButtonHandler();
-		inputBox.addKeyListener(enterHandler);
-		
 		//exit button
 		clear = new JButton("Clear");
 		ClearButtonHandler clearHandler = new ClearButtonHandler();
@@ -65,27 +58,6 @@ public class lab6 extends JFrame {
 		setSize(width, height);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-	}
-	
-	//create enter button class
-	public class EnterButtonHandler implements KeyListener{
-		public void keyPressed(KeyEvent e){
-			if(e.getKeyCode()==KeyEvent.VK_ENTER){
-				check.doClick();
-			}
-		}
-
-		@Override
-		public void keyReleased(KeyEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void keyTyped(KeyEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
 	}
 
 	//create check button class

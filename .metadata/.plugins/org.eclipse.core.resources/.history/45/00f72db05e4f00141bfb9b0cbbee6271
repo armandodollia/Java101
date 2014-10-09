@@ -20,16 +20,16 @@ public class palindromeHelper {
 		
 		public boolean palindrome(Integer number){
 			this.number = number;
-			Integer remainder = number, counter = 0;
+			Integer remainder = number, counter = -1;
 			
 			while(remainder != 0){
 				remainder = remainder / 10;
 				counter++;
 			}
 
-			for(Integer i = (counter-1); i >=0; i-=2){
-				if(((int)(number/Math.pow(10, i))) == ((int) (number % 10))){
-					number = (int)((number - (Math.pow(10, i) * (number % 10)))/10);
+			for(int i = counter; i !=0; i--){
+				if((int)(number/Math.pow(10, counter)) == (int) (number % 10)){
+					number = (int) (number - Math.pow(10, counter) + (number % 10));
 				}
 				else{
 					return false;
