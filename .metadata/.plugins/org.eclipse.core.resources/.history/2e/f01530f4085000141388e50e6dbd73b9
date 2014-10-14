@@ -7,7 +7,6 @@ public class palindromeHelper {
 		String word;
 		Integer number;
 
-		//String palindrome test constructor
 		public boolean palindrome(String word) {
 				this.word = word;
 				
@@ -19,19 +18,18 @@ public class palindromeHelper {
 			return true;
 		}
 		
-		//Integer palindrome test constructor
 		public boolean palindrome(Integer number){
 			this.number = number;
-			Integer remainder = number, counter = -1;
+			Integer remainder = number, counter = 0;
 			
 			while(remainder != 0){
-				remainder /= 10;
+				remainder = remainder / 10;
 				counter++;
 			}
 
-			for(; counter >=0; counter-=2){
-				if(((int)(number/Math.pow(10, counter))) == ((int) (number % 10))){
-					number = (int)((number - (Math.pow(10, counter) * (number % 10)))/10);
+			for(Integer i = (counter-1); i >=0; i-=2){
+				if(((int)(number/Math.pow(10, i))) == ((int) (number % 10))){
+					number = (int)((number - (Math.pow(10, i) * (number % 10)))/10);
 				}
 				else{
 					return false;

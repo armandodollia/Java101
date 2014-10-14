@@ -6,6 +6,9 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -42,7 +45,7 @@ public class lab6 extends JFrame {
 		check.addActionListener(checkHandler);
 		
 		//set enter key to check
-		enterButtonHandler enterHandler = new enterButtonHandler(check);
+		EnterButtonHandler enterHandler = new EnterButtonHandler();
 		inputBox.addKeyListener(enterHandler);
 		
 		//exit button
@@ -63,10 +66,30 @@ public class lab6 extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
+	
+	//create enter button class
+	public class EnterButtonHandler implements KeyListener{
+		public void keyPressed(KeyEvent e){
+			if(e.getKeyCode()==KeyEvent.VK_ENTER){
+				check.doClick();
+			}
+		}
+
+		@Override
+		public void keyReleased(KeyEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void keyTyped(KeyEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+	}
 
 	//create check button class
 	public class CheckButtonHandler implements ActionListener{
-		//check to see if input is an Integer
 		public boolean IsNumeric(){
 			try{
 			Integer.parseInt(inputBox.getText());
@@ -76,6 +99,8 @@ public class lab6 extends JFrame {
 			return true;
 		}
 		public void actionPerformed(ActionEvent e){
+			//String word = inputBox.getText();
+			//Integer number = Integer.parseInt(inputBox.getText());
 			palindromeHelper test = new palindromeHelper();
 			boolean isPalindrome = false;
 			if(IsNumeric()){
