@@ -62,6 +62,7 @@ public class lab6 extends JFrame {
 		setSize(width, height);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		outputBox.setEditable(false);
 	}
 
 	//create check button class

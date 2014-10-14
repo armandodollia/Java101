@@ -1,10 +1,11 @@
+/***********************
+ * Name: Armando Dollia*
+ * Date: 10/07/2014	   *
+ ***********************/
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,7 +18,7 @@ public class lab6 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JLabel input, output;
 	private JTextField inputBox, outputBox;
-	private JButton check, exit;
+	private JButton check, clear;
 	private static final int width = 500;
 	private static final int height = 200;
 	
@@ -40,10 +41,14 @@ public class lab6 extends JFrame {
 		CheckButtonHandler checkHandler = new CheckButtonHandler();
 		check.addActionListener(checkHandler);
 		
+		//set enter key to check
+		enterButtonHandler enterHandler = new enterButtonHandler(check);
+		inputBox.addKeyListener(enterHandler);
+		
 		//exit button
-		exit = new JButton("Exit");
-		ExitButtonHandler exitHandler = new ExitButtonHandler();
-		exit. addActionListener(exitHandler);
+		clear = new JButton("Clear");
+		ClearButtonHandler clearHandler = new ClearButtonHandler();
+		clear.addActionListener(clearHandler);
 		
 		//add elements to window
 		window.add(input);
@@ -51,7 +56,7 @@ public class lab6 extends JFrame {
 		window.add(output);
 		window.add(outputBox);
 		window.add(check);
-		window.add(exit);
+		window.add(clear);
 		
 		//set window size and visibility
 		setSize(width, height);
@@ -61,28 +66,45 @@ public class lab6 extends JFrame {
 
 	//create check button class
 	public class CheckButtonHandler implements ActionListener{
-		
+		//check to see if input is an Integer
+		public boolean IsNumeric(){
+			try{
+			Integer.parseInt(inputBox.getText());
+			} catch (NumberFormatException x){
+				return false;
+			}
+			return true;
+		}
 		public void actionPerformed(ActionEvent e){
-			String word = inputBox.getText();
-			new palindromeHelper(word);
-			
-			if(palindromeHelper.getTest()){
-				outputBox.setText("Yes");
+			palindromeHelper test = new palindromeHelper();
+			boolean isPalindrome = false;
+			if(IsNumeric()){
+				Integer number = Integer.parseInt(inputBox.getText());
+				if(test.palindrome(number)){
+					isPalindrome = true;
+				}
 			}
 			else{
-				outputBox.setText("No");
+				String word = inputBox.getText();
+				if(test.palindrome(word)){
+					isPalindrome = true;
+				}
 			}
+			
+			outputBox.setText(isPalindrome ? "Yes!" : "No" );
+			
 		}
 	}
 	
-	//exit button class
-	public class ExitButtonHandler implements ActionListener{
+	//clear button class
+	public class ClearButtonHandler implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			System.exit(0);
+			inputBox.setText("");
+			outputBox.setText("");
+			inputBox.requestFocusInWindow();
 		}
 	}
 	public static void main(String[] args) {
-		
 		new lab6();
 
 	}
