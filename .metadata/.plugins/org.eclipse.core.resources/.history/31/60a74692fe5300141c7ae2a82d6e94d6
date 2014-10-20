@@ -22,7 +22,16 @@ public class lab1 {
 		//Request user input for first number using the nextInt() method that parses the next integer input
 		number3 = console.nextInt();
 		sum = number1 + number2 + number3; //Sums all 3 numbers
-		System.out.print("The sum of the numbers is " + sum + ".");
+		System.out.println("The sum of the numbers is " + sum + ".");
 
+		int x = 5;
+		int y = 20;
+		do 
+			x *= 2;
+		while (x<y);
+		System.out.println(x);
+			
+		
+	
 	}
 }

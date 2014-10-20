@@ -23,6 +23,5 @@ public class lab1 {
 		number3 = console.nextInt();
 		sum = number1 + number2 + number3; //Sums all 3 numbers
 		System.out.print("The sum of the numbers is " + sum + ".");
-
 	}
 }

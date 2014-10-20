@@ -11,7 +11,7 @@ public class lab1 {
 		int sum;
 		//Creating new Scanner object named console
 		Scanner console = new Scanner(System.in);
-		System.out.println("Hello CSC 156!!!");
+		System.out.println("Hello CSC \n 156!!!");
 		System.out.print("Enter the first number: ");
 		//Request user input for first number using the nextInt() method that parses the next integer input
 		number1 = console.nextInt(); 
@@ -23,6 +23,5 @@ public class lab1 {
 		number3 = console.nextInt();
 		sum = number1 + number2 + number3; //Sums all 3 numbers
 		System.out.print("The sum of the numbers is " + sum + ".");
-
 	}
 }

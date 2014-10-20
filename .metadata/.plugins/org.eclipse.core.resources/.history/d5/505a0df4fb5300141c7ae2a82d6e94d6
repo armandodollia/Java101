@@ -23,6 +23,21 @@ public class lab1 {
 		number3 = console.nextInt();
 		sum = number1 + number2 + number3; //Sums all 3 numbers
 		System.out.print("The sum of the numbers is " + sum + ".");
-
+		int x=5;
+		int y;
+		if(x<5)
+			y = 1;
+		else if(x<5){
+			if(x<3)
+				y=2;
+			else
+				y=3;
+		}
+		else y = 4;
+		
+		System.out.println(y);
+		
+		
+	
 	}
 }
