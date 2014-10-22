@@ -7,25 +7,25 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JApplet;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 
-public class lab5EC extends JFrame{
+public class lab5EC extends JApplet{
 
 	private static final long serialVersionUID = 1L;
 	private JLabel narrowSide, wideSide, maxLength;
 	private JTextField narrowInput, wideInput, maxOutput;
 	private JButton calculate, exit;
-	private static final int width = 500;
-	private static final int height = 300;
+	//private static final int width = 500;
+	//private static final int height = 300;
 	
-	public lab5EC(){
+	public void init(){
 		//set the layout
-		setTitle("Max pipe length");
+		//setTitle("Max pipe length"); not needed in JApplet (declared in HTML)
 		Container pane = getContentPane();
 		pane.setLayout(new GridLayout(4, 2));
 		
@@ -44,10 +44,10 @@ public class lab5EC extends JFrame{
 		CalculateButtonHandler calcHandler = new CalculateButtonHandler();
 		calculate.addActionListener(calcHandler);
 		
-		//exit button
+		/* exit button not needed for JApplet
 		exit = new JButton("Exit");
 		exitButtonHandler exitHandler = new exitButtonHandler();
-		exit.addActionListener(exitHandler);
+		exit.addActionListener(exitHandler); */
 		
 		//add panes
 		pane.add(narrowSide);
@@ -57,12 +57,11 @@ public class lab5EC extends JFrame{
 		pane.add(maxLength);
 		pane.add(maxOutput);
 		pane.add(calculate);
-		pane.add(exit);
+		//pane.add(exit);
 		
-		//set window size and visibility
-		setSize(width, height);
-		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		//setSize(width, height); Not needed in JApplet (declared in HTML)
+		//setVisible(true); Not needed in JApplet
+		//setDefaultCloseOperation(EXIT_ON_CLOSE); Not needed in JApplet (handled by browser)
 	}
 	
 	//create calculate button class
@@ -81,17 +80,11 @@ public class lab5EC extends JFrame{
 			maxOutput.setText("" + max);
 		}
 	}
-		//begin exit button class
+		/*begin exit button class (Not needed in JApplet)
 		public class exitButtonHandler implements ActionListener{
 			
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
-		}
-
-	public static void main(String[] args) {
-		new lab5EC();
-
-	}
-
+		} */
 }

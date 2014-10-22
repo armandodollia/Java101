@@ -26,4 +26,5 @@
 <fullyQualifiedTypeName name="enterButtonHandler"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="javax.swing.JApplet"/>
 </qualifiedTypeNameHistroy>

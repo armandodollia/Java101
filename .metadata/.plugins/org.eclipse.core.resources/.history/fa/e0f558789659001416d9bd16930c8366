@@ -1,0 +1,9 @@
+<html>
+<head>
+<title>Ladder Problem</title>
+</head>
+<body>
+	<applet code = "bin/lab5EC.class" width = "500" height = "300">
+	</applet>
+</body>
+</html>
