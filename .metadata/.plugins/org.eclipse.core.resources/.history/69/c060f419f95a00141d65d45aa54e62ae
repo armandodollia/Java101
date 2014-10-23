@@ -19,7 +19,7 @@ public class lab5EC extends JApplet{
 	private static final long serialVersionUID = 1L;
 	private JLabel narrowSide, wideSide, maxLength;
 	private JTextField narrowInput, wideInput, maxOutput;
-	private JButton calculate;
+	private JButton calculate, exit;
 	//private static final int width = 500;
 	//private static final int height = 300;
 	
