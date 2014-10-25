@@ -1,0 +1,196 @@
+/***********************
+ * Name: Armando Dollia*
+ * Date: 10/23/2014	   *
+ ***********************/
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+
+
+public class lab7 extends JApplet{
+
+	private static final long serialVersionUID = 1L;
+	private JLabel pepperoni, sausage, tomato, greenPepper, olives, mushrooms, cheese;
+	private JCheckBox pepperoniB, sausageB, tomatoB, greenPepperB, olivesB, mushroomsB, cheeseB;
+	private JRadioButton smallR, mediumR, largeR;
+	private JRadioButton thinR, tossedR, panR;
+	private JLabel title, boxTitle, topping, size, crust;
+	private JTextArea order;
+	private JButton submit;
+	
+	public void init(){
+		//set the layout
+		Container pane = getContentPane();
+		pane.setLayout(null);
+		
+		//create labels
+		pepperoni = new JLabel("Pepperoni", SwingConstants.LEFT);
+		sausage = new JLabel("Sausage", SwingConstants.LEFT);
+		tomato = new JLabel("Tomato", SwingConstants.LEFT);
+		greenPepper = new JLabel("Green Pepper", SwingConstants.LEFT);
+		olives = new JLabel("Olives", SwingConstants.LEFT);
+		mushrooms = new JLabel("Mushrooms", SwingConstants.LEFT);
+		cheese = new JLabel("Extra Cheese", SwingConstants.LEFT);
+		title = new JLabel("Welcome to the Jungle (Pizza Shop)", SwingConstants.LEFT);
+		boxTitle = new JLabel("Your Order:", SwingConstants.LEFT);
+		topping = new JLabel("Toppings: $1.50", SwingConstants.LEFT);
+		size = new JLabel("Pizza Size", SwingConstants.LEFT);
+		crust = new JLabel("Pizza Type", SwingConstants.LEFT);
+		
+		//set location and size for labels
+		pepperoni.setLocation(30, 80);
+		pepperoni.setSize(80, 18);
+		sausage.setLocation(30, 110);
+		sausage.setSize(80, 18);
+		tomato.setLocation(30, 140);
+		tomato.setSize(80, 18);
+		greenPepper.setLocation(30, 170);
+		greenPepper.setSize(80, 18);
+		olives.setLocation(30, 200);
+		olives.setSize(80, 18);
+		mushrooms.setLocation(30, 230);
+		mushrooms.setSize(80, 18);
+		cheese.setLocation(30, 260);
+		cheese.setSize(80, 18);
+		
+		//title labels
+		title.setLocation(10, 1);
+		title.setSize(500, 40);
+		title.setFont(getFont().deriveFont(22f));
+		topping.setLocation(15, 50);
+		topping.setSize(100,18);
+		size.setLocation(155, 50);
+		size.setSize(80,18);
+		crust.setLocation(255,50);
+		crust.setSize(80,18);
+		boxTitle.setLocation(10, 290);
+		boxTitle.setSize(80, 18);
+		
+
+		//create text area
+		order = new JTextArea(5,200);
+		order.setLocation(10, 320);
+		order.setSize(350, 100);
+		
+		//create check boxes
+		pepperoniB = new JCheckBox();
+		sausageB = new JCheckBox();
+		tomatoB = new JCheckBox();
+		greenPepperB = new JCheckBox();
+		olivesB = new JCheckBox();
+		mushroomsB = new JCheckBox();
+		cheeseB = new JCheckBox();
+		
+		//set location for check box
+		pepperoniB.setLocation(10, 80);
+		pepperoniB.setSize(18, 18);
+		sausageB.setLocation(10, 110);
+		sausageB.setSize(18, 18);
+		tomatoB.setLocation(10, 140);
+		tomatoB.setSize(18, 18);
+		greenPepperB.setLocation(10, 170);
+		greenPepperB.setSize(18, 18);
+		olivesB.setLocation(10, 200);
+		olivesB.setSize(18, 18);
+		mushroomsB.setLocation(10, 230);
+		mushroomsB.setSize(18, 18);
+		cheeseB.setLocation(10, 260);
+		cheeseB.setSize(18, 18);
+		
+		//create radio buttons
+		smallR = new JRadioButton("Small: $6.50",false);
+		mediumR = new JRadioButton("Medium: $8.50",true);
+		largeR = new JRadioButton("Large: $10.00",false);
+		thinR = new JRadioButton("Thin Crust", false);
+		tossedR = new JRadioButton("Hand Tossed", true);
+		panR = new JRadioButton("Pan Pizza", false);
+		
+		//group the size radio buttons
+		ButtonGroup sizes = new ButtonGroup();
+		sizes.add(smallR);
+		sizes.add(mediumR);
+		sizes.add(largeR);
+		
+		//group the crust radio buttons
+		ButtonGroup crusts = new ButtonGroup();
+		crusts.add(thinR);
+		crusts.add(tossedR);
+		crusts.add(panR);
+		
+		
+		//set location for radio buttons
+		smallR.setLocation(150, 80);
+		smallR.setSize(100, 18);
+		mediumR.setLocation(150, 110);
+		mediumR.setSize(100, 18);
+		largeR.setLocation(150, 140);
+		largeR.setSize(100, 18);
+		thinR.setLocation(250, 80);
+		thinR.setSize(18, 18);
+		tossedR.setLocation(250, 110);
+		tossedR.setSize(18, 18);
+		panR.setLocation(250, 140);
+		panR.setSize(18, 18);
+		
+		//create and instantiate submit button
+		submit = new JButton("Submit Order");
+		SubmitHandler orderHandler = new SubmitHandler();
+		submit.addActionListener(orderHandler);
+		submit.setLocation(150, 170);
+		submit.setSize(200,30);
+		
+		//place elements in window
+		pane.add(title);
+		pane.add(pepperoni);
+		pane.add(sausage);
+		pane.add(tomato);
+		pane.add(greenPepper);
+		pane.add(olives);
+		pane.add(mushrooms);
+		pane.add(cheese);
+		pane.add(pepperoniB);
+		pane.add(sausageB);
+		pane.add(tomatoB);
+		pane.add(greenPepperB);
+		pane.add(olivesB);
+		pane.add(mushroomsB);
+		pane.add(cheeseB);
+		pane.add(smallR);
+		pane.add(mediumR);
+		pane.add(largeR);
+		pane.add(thinR);
+		pane.add(tossedR);
+		pane.add(panR);
+		pane.add(boxTitle);
+		pane.add(order);
+		pane.add(submit);
+		pane.add(topping);
+		pane.add(size);
+		pane.add(crust);
+		
+		//pane.setBackground(Color.blue);
+	}
+	
+	public void draw( Graphics g){
+		g.drawRect(25, 45, 50, 200);
+	}
+	//create submit button class
+	public class SubmitHandler implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e){
+			order.setText("it works!");
+		}
+		
+	}
+}
