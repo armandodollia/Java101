@@ -220,10 +220,9 @@ public class lab7 extends JApplet implements ItemListener, ActionListener{
 
 	private void refreshOrderText() {
 		
-		//reset counter and pizza topings
-		pizzaToppings = "";
-		counter = 0;
-		
+		pizzaSize = "Pizza Size: ";
+		pizzaCrust = "Crust Type: ";
+
 		//check the size radio button selection
 		if(sizes.getSelection() != null){
 			if(sizes.getSelection().getActionCommand() == SMALL){
@@ -240,10 +239,7 @@ public class lab7 extends JApplet implements ItemListener, ActionListener{
 			}
 		}
 		
-		//reset counter and pizza topings
-		pizzaToppings = "";
-		counter = 0;
-		
+
 		//check the crust radio button selection
 		if(crusts.getSelection() != null){
 			if (crusts.getSelection().getActionCommand() == THIN){
@@ -258,7 +254,7 @@ public class lab7 extends JApplet implements ItemListener, ActionListener{
 		}
 		
 		//reset counter and pizza topings
-		pizzaToppings = "";
+		pizzaToppings = "Toppings: ";
 		counter = 0;
 		
 		//get the topping selections
@@ -283,8 +279,11 @@ public class lab7 extends JApplet implements ItemListener, ActionListener{
 				order.setText(pizzaSize + "\n" + pizzaCrust + "\n" + pizzaToppings + "\n" + cost + "\n" + "Order Submitted!");
 			}
 			else{
-				JOptionPane.showMessageDialog(null, "Please select a topping and a crust");
-				pizzaToppings = "";
+				JOptionPane.showMessageDialog(null, "Please select a size and a crust");
+				//reset counter and pizza topings
+				pizzaToppings = "Toppings: ";
+				pizzaSize = "Pizza Size: ";
+				pizzaCrust = "Crust Type: ";
 				counter = 0;
 				}
 		}
@@ -295,11 +294,16 @@ public class lab7 extends JApplet implements ItemListener, ActionListener{
 	public class ClearHandler implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e){
-			order.setText("");
 			
+			crusts.clearSelection();
+			sizes.clearSelection();
+			for(int i = 0; i < toppings.size(); i++){
+				if(toppings.get(i).isSelected()){
+					toppings.get(i).setSelected(false);
+					}				
+			}
+			order.setText("");
 		}
 	}
-
-
 }
 
