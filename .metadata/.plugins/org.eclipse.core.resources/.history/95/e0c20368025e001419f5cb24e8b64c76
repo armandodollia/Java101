@@ -1,0 +1,42 @@
+import java.awt.HeadlessException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
+import javax.swing.JOptionPane;
+
+
+public class exercise6 {
+
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) throws HeadlessException, ParseException {
+		Integer day;
+		Integer dayB;
+		SimpleDateFormat formatter = new SimpleDateFormat("MMMM dd yyy" , Locale.US);
+
+		//create and instantiate the Calendar class
+		Calendar time = Calendar.getInstance();
+		Calendar birthday = Calendar.getInstance();
+		
+		
+		//Date convertedDate = formatter.parse(JOptionPane.showInputDialog("What is your birthdate?"));	
+		
+		//ask the user for input and convert to a calendar format
+		birthday.setTime(formatter.parse(JOptionPane.showInputDialog("What is your birthdate?")));
+		
+
+		
+		//store birthday date values in separate integers
+		dayB =  birthday.get(Calendar.DAY_OF_YEAR);
+		day = time.get(Calendar.DAY_OF_YEAR);
+
+		
+		System.out.println(day-dayB);
+
+	}
+
+}
