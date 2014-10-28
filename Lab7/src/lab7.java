@@ -253,7 +253,7 @@ public class lab7 extends JApplet implements ItemListener, ActionListener{
 			}
 		}
 		
-		//reset counter and pizza topings
+		//reset counter and pizza toppings
 		pizzaToppings = "Toppings: ";
 		counter = 0;
 		
