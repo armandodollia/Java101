@@ -12,10 +12,11 @@ import java.awt.event.ItemListener;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -33,6 +34,7 @@ public class lab7EC extends JFrame implements ItemListener, ActionListener{
 	private static final long serialVersionUID = 1L;
 	private static final int WIDTH = 500, HEIGHT = 600;
 	private static final String SMALL="Small", MEDIUM="Medium", LARGE="Large", THIN="Thin", TOSSED="Tossed", PAN="Pan";
+	private static String name, line, orderFinal;
 	private JCheckBox pepperoniB, sausageB, tomatoB, greenPepperB, olivesB, mushroomsB, cheeseB;
 	private JRadioButton smallR, mediumR, largeR;
 	private JRadioButton thinR, tossedR, panR;
@@ -44,7 +46,8 @@ public class lab7EC extends JFrame implements ItemListener, ActionListener{
 	private String pizzaToppings = "Toppings: ", pizzaSize = "Pizza Size: ", pizzaCrust = "Crust Type: ", cost;
 	private Integer counter = 0;
 	private Double total, sizePrice = 0.0;
-	private static String name;
+
+
 	
 	
 	
@@ -281,26 +284,41 @@ public class lab7EC extends JFrame implements ItemListener, ActionListener{
 
 		total = (sizePrice+(counter*1.50));
 		cost = String.format("Price: $%.2f", total);
+		orderFinal = String.format("Name:" + name + "\n" + pizzaSize + "\n" + pizzaCrust + "\n" + pizzaToppings + "\n");
 		order.setText(pizzaSize + "\n" + pizzaCrust + "\n" + pizzaToppings + "\n" + cost);
 	}
 
 	//create submit button class
 	public class SubmitHandler implements ActionListener{
+		
 
 		
 		public void actionPerformed(ActionEvent e){
+			PrintWriter outFile = null;
+			try {
+				outFile = new PrintWriter(new FileWriter("Pizza_Order_Database.txt"));
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 			if (crusts.getSelection() != null && sizes.getSelection() != null){
+				outFile.println(orderFinal);
+				
 				order.setText(pizzaSize + "\n" + pizzaCrust + "\n" + pizzaToppings + "\n" + cost + "\n" + "Order Submitted!");
 			}
 			else{
 				JOptionPane.showMessageDialog(null, "Please select a size and a crust");
-				//reset counter and pizza topings
+				//reset counter and pizza toppings
 				pizzaToppings = "Toppings: ";
 				pizzaSize = "Pizza Size: ";
 				pizzaCrust = "Crust Type: ";
 				counter = 0;
 				}
-			
+			outFile.close();
 		}
 		
 	}
@@ -322,13 +340,22 @@ public class lab7EC extends JFrame implements ItemListener, ActionListener{
 	}
 
 
-	public static void main(String[] args) throws FileNotFoundException{
+	public static void main(String[] args) throws IOException{
 		BufferedReader inFile = new BufferedReader(new FileReader("Pizza_Order_Database.txt"));
 		PrintWriter outFile = new PrintWriter("Pizza_Order_Database.txt");
 		
 		name = JOptionPane.showInputDialog(null, "What is your name?");
-		if 
+		while ((line = inFile.readLine()) != null){
+			if (line.substring(0, line.toString().indexOf(':')).equals("Name")){
+				if (name.equals(line.substring(line.indexOf(':')+1, line.length()))){
+					JOptionPane.showMessageDialog(null, "Exists");
+				}
+			}
+		}
 		
 		new lab7EC();
+		
+		inFile.close();
+		outFile.close();
 	}
 }
