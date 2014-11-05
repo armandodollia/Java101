@@ -30,7 +30,7 @@ public class exercise6 {
 		
 		
 		if (name.indexOf(' ') != -1){
-		firstName = name.substring(0, name.indexOf(' '));
+			firstName = name.substring(0, name.indexOf(' '));
 		}
 		else{
 			firstName = name.substring(0, name.length());

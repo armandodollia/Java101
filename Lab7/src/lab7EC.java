@@ -346,8 +346,8 @@ public class lab7EC extends JFrame implements ItemListener, ActionListener{
 		
 		name = JOptionPane.showInputDialog(null, "What is your name?");
 		while ((line = inFile.readLine()) != null){
-			if (line.substring(0, line.toString().indexOf(':')).equals("Name")){
-				if (name.equals(line.substring(line.indexOf(':')+1, line.length()))){
+			if (line.substring(0, line.indexOf(':')).equals("Name")){
+				if (name.equals(line.substring(line.indexOf(':')+1, line.length()-1))){
 					JOptionPane.showMessageDialog(null, "Exists");
 				}
 			}

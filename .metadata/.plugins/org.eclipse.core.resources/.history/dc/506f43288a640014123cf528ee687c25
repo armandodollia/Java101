@@ -1,0 +1,19 @@
+
+public class mainStudent {
+
+	public static void main(String[] args) {
+
+		int[] labs = new int[10];
+		Student John  = new Student();
+		John.setName("John");
+		
+		for (int i = 0; i < Student.NUMBER_OF_LABS; i++){
+			John.setLabs(i, (i+1) * 10);
+		}
+		
+		System.out.println(John);
+		
+
+	}
+
+}

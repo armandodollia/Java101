@@ -1,9 +1,0 @@
-<html>
-<head>
-<title>Vowel Checker</title>
-</head>
-<body>
-	<object code = "bin/lab5EC.class" width = "500" height = "300">
-	</object>
-</body>
-</html>

@@ -207,7 +207,6 @@ public class lab7 extends JApplet implements ItemListener, ActionListener{
 		tossedR.addActionListener(this);
 		panR.addActionListener(this);
 		
-		//pane.setBackground(Color.blue);
 	}
 
 	public void itemStateChanged(ItemEvent e){
