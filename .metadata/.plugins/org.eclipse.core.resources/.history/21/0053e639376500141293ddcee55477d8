@@ -1,0 +1,14 @@
+import javax.swing.JOptionPane;
+
+
+public class RomanDriver {
+
+	public static void main(String[] args) {
+		RomanConverter romanConverter = new RomanConverter();
+		String roman = JOptionPane.showInputDialog("Please input a Roman Numeral");
+		romanConverter.RomanToDecimal(roman);
+
+		JOptionPane.showMessageDialog(null, "The roman numeral: " + romanConverter.getRoman() + " equals " + romanConverter.getNumber());
+	}
+
+}

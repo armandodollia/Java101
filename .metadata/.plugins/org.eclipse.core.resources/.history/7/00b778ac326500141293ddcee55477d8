@@ -1,0 +1,75 @@
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class RomanConverter {
+
+	private String roman = "";
+	private Integer num = 0, romanInt = 0;
+	private List<position> romanList = new ArrayList<position>();
+	
+	public RomanConverter(){
+		roman = "";
+		num = 0;
+		romanInt = 0;
+		}
+	
+	
+	public void RomanToDecimal(String theRoman){
+		roman = theRoman;
+		Integer num = 0;
+		Integer length = roman.length()-1;
+
+		for(int i = 0; i <= length; i++){
+				switch (roman.charAt(i)){
+				
+				case 'I':
+					num = 1;
+				case 'V':
+					num = 5;
+				case 'X':
+					num = 10;
+				case 'L':
+					num = 50;
+				case 'C':
+					num = 100;
+				case 'D':
+					num = 500;
+				case 'M':
+					num = 1000;
+				}
+				
+				position position = new position(num);
+				romanList.add(position);
+		}
+
+		for(int i = 0; i < romanList.size(); i++){
+			if(i == romanList.size()-1){
+				romanInt += romanList.get(i).getValue();
+			}
+			else{
+				if(romanList.get(i).getValue() <= romanList.get(i+1).getValue()){
+					romanInt += romanList.get(i).getValue();
+				}
+				else{
+					romanInt -= romanList.get(i).getValue();
+				}
+			}
+		}
+
+
+	}
+	
+	public Integer getNumber(){
+		return romanInt;
+	}
+	
+	public String getRoman(){
+		return roman;
+	}
+	
+	public Integer getNum(){
+		return num;
+	}
+}
