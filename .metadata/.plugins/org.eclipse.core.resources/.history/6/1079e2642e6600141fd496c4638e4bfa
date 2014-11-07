@@ -1,0 +1,27 @@
+import javax.swing.JOptionPane;
+
+
+public class RomanDriver {
+
+	public static void main(String[] args) {
+		
+		Integer romanInt = null;
+		String roman = null;
+		
+		RomanConverter romanConverter = new RomanConverter();
+		
+		try{
+			romanInt = Integer.parseInt(JOptionPane.showInputDialog("Input an Integer or a Roman Numeral for conversion"));
+		}
+		catch(NumberFormatException x){
+			roman = JOptionPane.showInputDialog("Input an Integer or a Roman Numeral for conversion");
+		}
+		
+		if(romanInt != null){
+			romanConverter.DecimanToRoman(romanInt);
+		}
+		else{
+			romanConverter.RomanToDecimal(roman);
+		}
+	}
+}

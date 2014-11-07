@@ -77,30 +77,31 @@ public class RomanConverter {
 		
 		loop = romanInt; //reset loop storage variable for use
 		while(loop > 0){
-			if(loop % 10 > 0){
+			if(loop % 10 >= 0){
 			position position = new position((loop % 10));
 			romanList.add(position);
 			
 			loop = (loop-(loop % 10))/10;
 			counter *= 10;
 			}
-			else{
+			/*else{
 				position position = new position((loop % 10));
 				romanList.add(position);
 				
 				loop /= 10;
 				counter *= 10;
-			}
+			}*/
 		}
 		
 		for(int i = romanList.size() - 1; i >= 0; i--){
 			switch(i){
+			
 			case 3:
 				multiplier = (int) romanList.get(i).getValue();
 				for(int m = multiplier; m != 0; m--){
 					roman += "M";
 				}
-				
+				break;
 			case 2:
 				multiplier = (int) romanList.get(i).getValue();
 				
@@ -125,6 +126,7 @@ public class RomanConverter {
 				else if(multiplier == 9){
 					roman += "CM";
 				}
+				break;
 				
 			case 1:
 				multiplier = (int) romanList.get(i).getValue();
@@ -150,6 +152,7 @@ public class RomanConverter {
 				else if(multiplier == 9){
 					roman += "XC";
 				}
+				break;
 				
 			case 0:
 				multiplier = (int) romanList.get(i).getValue();
@@ -175,6 +178,7 @@ public class RomanConverter {
 				else if(multiplier == 9){
 					roman += "IX";
 				}
+				break;
 			}
 		}
 		
@@ -189,7 +193,7 @@ public class RomanConverter {
 	}
 	
 	public String toString(){
-		return "The integer conversion of roman mumeral " + roman + " is " + romanInt + ".";
+		return "Roman mumeral " + roman + " equals " + romanInt + ".";
 	}
 	
 }

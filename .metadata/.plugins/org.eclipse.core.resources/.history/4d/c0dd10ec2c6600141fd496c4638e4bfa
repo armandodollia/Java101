@@ -1,0 +1,23 @@
+import javax.swing.JOptionPane;
+
+
+public class RomanDriver {
+
+	public static void main(String[] args) {
+		
+		RomanConverter romanConverter = new RomanConverter();
+		
+		String choice = JOptionPane.showInputDialog("Is your input a Roman Numeral or an Integer?");
+		char c = choice.toUpperCase().charAt(0);
+		if(c == 'R'){
+			romanConverter.DecimanToRoman(Integer.parseInt(JOptionPane.showInputDialog("Please input a roman numeral")));
+			JOptionPane.showMessageDialog(null, romanConverter);
+		}
+		
+		else{
+		romanConverter.DecimanToRoman(Integer.parseInt(JOptionPane.showInputDialog("Please input a Number under 4000")));
+		JOptionPane.showMessageDialog(null, romanConverter);
+		}
+	}
+
+}
