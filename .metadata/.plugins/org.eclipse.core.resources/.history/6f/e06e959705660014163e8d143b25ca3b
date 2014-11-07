@@ -1,0 +1,22 @@
+
+public class position {
+	private Integer value;
+	private char roman;
+	
+	public position(final Integer value){
+		this.value = value;
+	}
+	
+	public position(final char roman){
+		this.roman = roman;
+	}
+	
+	public Integer getValue(){
+		return value;
+	}
+	
+	public char getChar(){
+		return roman;
+	}
+
+}

@@ -5,9 +5,9 @@ public class RomanDriver {
 
 	public static void main(String[] args) {
 		RomanConverter romanConverter = new RomanConverter();
-		romanConverter.RomanToDecimal(JOptionPane.showInputDialog("Please input a Roman Numeral"));
+		romanConverter.DecimanToRoman(Integer.parseInt(JOptionPane.showInputDialog("Please input a Number under 4000")));
 
-		JOptionPane.showMessageDialog(null, "The roman numeral: " + romanConverter.getRoman() + " equals " + romanConverter.getNumber());
+		JOptionPane.showMessageDialog(null, romanConverter);
 	}
 
 }
