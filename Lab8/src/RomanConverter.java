@@ -84,13 +84,6 @@ public class RomanConverter {
 			loop = (loop-(loop % 10))/10;
 			counter *= 10;
 			}
-			/*else{
-				position position = new position((loop % 10));
-				romanList.add(position);
-				
-				loop /= 10;
-				counter *= 10;
-			}*/
 		}
 		
 		for(int i = romanList.size() - 1; i >= 0; i--){
@@ -193,7 +186,7 @@ public class RomanConverter {
 	}
 	
 	public String toString(){
-		return "Roman mumeral " + roman + " equals " + romanInt + ".";
+		return roman + " equals " + romanInt;
 	}
 	
 }
