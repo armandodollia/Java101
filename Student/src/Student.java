@@ -1,21 +1,22 @@
 
 public class Student {
-	private String name;
+	private String first, last;
 	private char grade;
-	private int[] labs = new int[10];
-	public static final int NUMBER_OF_LABS = 10;
+	private int gradeSum = 0, gradePct = 0;
+	private int[] labs = new int[5];
+	public static final int NUMBER_OF_LABS = 5;
 	
 	public Student(){
-		name = "";
+		first = "";
+		last = "";
 		grade = 'N';
 		for(int i = 0; i < NUMBER_OF_LABS; i++){
 			labs[i] = 0;
 		}
 	}
 	
-	public void calculateGrade(int labs[]){
-		int gradeSum = 0;
-		int gradePct = 0;
+	public char calculateGrade(int labs[]){
+
 		for(int i = 0; i < NUMBER_OF_LABS; i++){;
 			gradeSum += labs[i];
 		}
@@ -35,19 +36,21 @@ public class Student {
 		else{
 			grade = 'F';
 		}
-	}
-	
-	public String getName(){
-		return name;
-	}
-	
-	public void setName(String n){
-		name = n;
-	}
-	
-	public char getGrade(){
 		return grade;
 	}
+	
+	public String getFirst(){
+		return first;
+	}
+	public String getLast(){
+		return last;
+	}
+	
+	public void setName(String first, String last){
+		this.first = first;
+		this.last = last;
+	}
+	
 	
 	public void setLabs(int index, int score){
 		labs[index] = score;
@@ -57,13 +60,19 @@ public class Student {
 		return labs;
 	}
 	
+	public Integer getPct(){
+		return gradePct;
+	}
+	
 
 	public String toString(){
 		String details = "";
 		for(int i = 0; i < NUMBER_OF_LABS; i++){
-			details += " " + labs[i];
+			details += String.format("%13d", labs[i]);
+			//details += " " + labs[i];
 		}
-		return "\n" + name + "'s grade is: " + grade + " with the following lab scores: " + details;
+		char g = calculateGrade(getLabs());
+		return String.format("%13s%13s", first, last) + details + String.format("%13d%13s", getPct(), g);
 	}
 	
 }

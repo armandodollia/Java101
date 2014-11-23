@@ -1,0 +1,30 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+public class mainStudent {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		Scanner reader = new Scanner(new FileReader("students.txt"));
+		PrintWriter writer = new PrintWriter("students_agreggate.txt");
+		
+		//writer.printf("%-13s%-13s", student.getFirst(), student.getLast());
+		//writer.println();
+		
+		while(reader.hasNext()){
+			Student student = new Student();
+			student.setName(reader.next(), reader.next());
+			for(int i = 0; i < Student.NUMBER_OF_LABS; i++){
+				student.setLabs(i, reader.nextInt());
+			}
+			writer.println(student);
+		}
+		
+		
+		reader.close();
+		writer.close();
+	}
+
+}

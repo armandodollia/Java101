@@ -1,0 +1,12 @@
+   First Name    Last Name        Lab 1        Lab 2        Lab 3        Lab 4        Lab 5      Average        Grade
+         Jack      Johnson           85           83           77           91           76           82            B
+         Lisa      Aniston           80           90           95           93           48           81            B
+         Andy       Cooper           78           81           11           90           73           66            D
+         Ravi        Gupta           92           83           30           69           87           72            C
+        Bonny        Blair           23           45           96           38           59           52            F
+        Danny        Clark           60           85           45           39           67           59            F
+     Samantha      Kennedy           77           31           52           74           83           63            D
+        Robin      Bronson           93           94           89           77           97           90            A
+       Sheila        Sunny           79           85           28           93           82           73            C
+        Kiran        Smith           85           72           49           75           63           68            D
+Class Average = 70

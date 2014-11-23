@@ -17,7 +17,7 @@ public class exercise6 {
 	public static void main(String[] args) throws HeadlessException, ParseException {
 		Integer day, dayB, diff;
 		String color, name, firstName, match, outString;
-		SimpleDateFormat formatter = new SimpleDateFormat("MMMM dd yyy" , Locale.US);
+		SimpleDateFormat formatter = new SimpleDateFormat("MMMM dd yyyy" , Locale.US);
 		final String RED = "RED";
 
 		//create and instantiate the Calendar class
