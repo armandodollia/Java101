@@ -1,0 +1,23 @@
+
+public class VowelDetector {
+	private Integer i = 0, vowels = 0;
+	
+	public VowelDetector(){
+		i = 0;
+		vowels = 0;
+	}
+
+	public Integer Detector(String word){
+		if(i == word.length()-1){
+			if(word.charAt(i) == 'A' || word.charAt(i) == 'E' || word.charAt(i) == 'I' ||
+					word.charAt(i) == 'O' || word.charAt(i) == 'U' ||word.charAt(i) == 'Y'){
+				vowels++;
+				i++;
+			}
+			return vowels;
+		}
+		else{
+			return vowels + Detector(word);
+		}
+	}
+}

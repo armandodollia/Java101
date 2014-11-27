@@ -1,0 +1,26 @@
+
+public class VowelDetector {
+	private Integer vowels = 0;
+	
+	public VowelDetector(){
+		vowels = 0;
+	}
+
+	public Integer Detector(String word, Integer index, Integer lastIndex){
+		if(index == lastIndex){
+			if(word.charAt(index) == 'A' || word.charAt(index) == 'E' || word.charAt(index) == 'I' ||
+					word.charAt(index) == 'O' || word.charAt(index) == 'U' ||word.charAt(index) == 'Y'){
+				vowels++;
+			}
+			return vowels;
+		}
+		else{
+				if(word.charAt(index) == 'A' || word.charAt(index) == 'E' || word.charAt(index) == 'I' ||
+						word.charAt(index) == 'O' || word.charAt(index) == 'U' ||word.charAt(index) == 'Y'){
+					return vowels + Detector(word, index++, lastIndex);
+				}
+			
+		}
+		return vowels;
+	}
+}
